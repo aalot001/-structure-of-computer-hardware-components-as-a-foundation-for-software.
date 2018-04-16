@@ -1,0 +1,66 @@
+Script started on Tue 21 Mar 2017 12:30:52 PM EDT
+];aalot001@cslab-108.cs.plattsburgh.eduHWS$ cat calcu.s 
+	.file	"calcu.c"
+	.text
+	.globl	calcu
+	.type	calcu, @function
+calcu:
+.LFB39:
+	.cfi_startproc
+	movl	%edi, %eax
+	notl	%eax
+	movl	%esi, %ecx
+	xorl	%edx, %ecx
+	sall	%cl, %edi
+	subl	%edi, %eax
+	ret
+	.cfi_endproc
+.LFE39:
+	.size	calcu, .-calcu
+	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"
+	.section	.note.GNU-stack,"",@progbits
+];aalot001@cslab-108.cs.plattsburgh.eduHWS$ cat calcu.c 
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int calcu( int x, int y, int z){
+    
+    int t1 = y ^ z;
+    int t2 = x << t1;
+    int t3 = ~ x;
+    int t4 = t3 - t2;
+    return t4;
+}
+
+];aalot001@cslab-108.cs.plattsburgh.eduHWS$ cat main.c 
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Ahmed Alotaibi
+   3/7/2017
+	*/
+	
+int main()
+{
+	int x,y,z;
+	printf("Enter two numbers for -, *, <<, >>, ^ : ");
+	   scanf("%d%d", &x, &y);
+		z = x ^ y;
+		   printf("\n\tFor ^ numbers = %d\n", z);
+		z = x >> y;
+		   printf("\n\tFor >> numbers = %d\n", z);
+		z = ~ y;
+		   printf("\n\tFor ~ numbers = %d\n", z);
+		z = x - y;
+		   printf("\n\tFor - numbers = %d\n", z);
+	
+			return 0;
+}
+
+];aalot001@cslab-108.cs.plattsburgh.eduHWS$ ls
+[0m[01;32masum[0m*  calcu.c  calcu.o  calcu.s  main.c
+];aalot001@cslab-108.cs.plattsburgh.eduHWS$ exit
+exit
+
+Script done on Tue 21 Mar 2017 12:31:28 PM EDT

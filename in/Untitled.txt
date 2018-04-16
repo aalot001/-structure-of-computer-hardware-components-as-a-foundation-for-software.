@@ -1,0 +1,7 @@
+
+Ahmed ALotaibi:
+
+At the beginning, I though it will print one of the statement such as a or b with c. Or b and c but not a. However, after, I realized the curly braces and the waitpid function with paramter parameters, will print all a, b and c twic. 
+
+
+

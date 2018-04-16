@@ -1,0 +1,31 @@
+Script started on Thu 30 Mar 2017 12:12:36 PM EDT
+];aalot001@cslab-107.cs.plattsburgh.eduDoWhileLoop$ ls
+[0m[01;32masum[0m*   factorForLoop  [01;32mforLoop[0m*   forLoop.s  fuctor.s  mainLoop.c
+[01;32masum1[0m*  factorial      forLoop.c  fuctor.c   main.c
+];aalot001@cslab-107.cs.plattsburgh.eduDoWhileLoop$ cat[K[K[K./[K[Kcat forLoop.c [K[K[K[K[K[K[K[K[K[K[K[K[K[K./forLoop 
+Enter the number : 5
+Factorial of 5 is 120];aalot001@cslab-107.cs.plattsburgh.eduDoWhileLoop$ cat forLoop.c 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int fact = 1,num,i;
+
+printf("Enter the number : ");
+scanf("%d", &num);
+
+for(i = 1;i <= num;i++)
+{
+fact = fact * i;
+}
+
+printf("Factorial of %d is %d", num, fact);
+
+return 0;
+}
+
+];aalot001@cslab-107.cs.plattsburgh.eduDoWhileLoop$ exit
+exit
+
+Script done on Thu 30 Mar 2017 12:13:22 PM EDT

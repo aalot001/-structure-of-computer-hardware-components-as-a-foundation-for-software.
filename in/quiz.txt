@@ -1,0 +1,16 @@
+Ahmed Alotaibi:
+
+Work-In-Class:
+
+	1. Link time error due to two strong symbols.
+
+	2. x cannot be reference to the same uninitialized.
+
+	3. x may overwrite error with y.
+
+	4. x will overwrite y due to 7 , 5.
+	
+	5. References to x will refrer to the same initialized variable.
+
+
+

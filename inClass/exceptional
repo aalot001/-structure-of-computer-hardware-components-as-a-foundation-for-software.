@@ -1,0 +1,27 @@
+Script started on Thu 27 Apr 2017 12:04:16 PM EDT
+];aalot001@cslab-106.cs.plattsburgh.eduinclass$ cat error.c 
+#include <stdio.h>
+#include <string.h>
+#include <sys/types.h>
+/*
+Ahmed Alotaibi:
+*/
+//Exceptional Control Flow:        
+
+int main(){
+
+	int x = 0;
+	int y = 0;
+	int z;
+	z = x / y;
+	printf("Result = %d ", z);
+	return 0;
+}
+
+	
+];aalot001@cslab-106.cs.plattsburgh.eduinclass$ ./error 
+Floating point exception
+];aalot001@cslab-106.cs.plattsburgh.eduinclass$ exit
+exit
+
+Script done on Thu 27 Apr 2017 12:04:30 PM EDT

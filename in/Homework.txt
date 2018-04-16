@@ -1,0 +1,49 @@
+Ahmed alotaibi:
+Homework:
+
+foo5.c
+#include <stdio.h>
+
+ void f(void);
+
+ int x = 15213;
+
+ int y = 15212;
+
+int main(){
+
+ f(); 
+ printf("x = 0x%d y = 0x%d \n",x, y);
+
+ return 0;
+}
+
+-----------------
+bar5.c
+#include <stdio.h>
+
+int x;
+
+void f(){
+    x = 15213;
+ }
+
+
+------------------------------------------------------------------
+7.9
+
+To understand this problem, we need to know the three rule of UNIX(multiple symbols):
+
+1. Doesn't support strong symbol.
+2. If both strong symbol and weak symbol appear, it will automatically choose strong symbol.
+3. If there is more than one weak symbols, it will randomly select one from them.
+
+In this practice, main function in foo6.c is strong symbol, and main function in bar6.c is weak symbol.
+
+When you print main in bar6.c, the linker automatically select strong symbol, which is the main function in foo6.c. In the targeted file, the address of symbol main is the initial address of main function.
+
+Therefore, the print statement in bar6.c will print the result of the first char from main function. In IA32, the first command in the function is usually Stack command:
+
+             pushl %ebp
+
+This command is 0x55 in machine language.

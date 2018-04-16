@@ -1,0 +1,68 @@
+Script started on Tue 18 Apr 2017 11:50:45 AM EDT
+];aalot001@cslab-107.cs.plattsburgh.eduinClass$ exitgedit hshsobjdump -d asumsum_element.s\(1\).o asum[K[C[C[C[C[C[C[C[C[C[5Pgedit hshs[6Pexitgedit hshsobjdump -d asum[C[C[C[C[C[C[C[C[C[5Pgedit hshs[6Pexit[Kexitgedit hshsobjdump -d asumsum_element.s\(1\).o [C[C[C[C[C[C[C[C[Cls[Kgcc -O1 -c sum_element.s\(1\).s [C[C[C[C[C[C[C[C[Cls[Kobjdump -d sum_element.s\(1\).s [C[C[C[C[C[C[C[C[Cls[Kg++ [2Plsgcc -O -S sum_element.s\(1\).s [C[C[C[C[C[C[C[C[Cls[Kcat main.s [C[C[C[C[C[C[C[C[Cla[Ksgcc -O -S main.c [K[C[C[C[C[C[C[C[C[Cls[Kgcc -O -S main.c [C[C[C[C[C[C[C[C[Cls[Kacat main.s [C[C[C[C[C[C[C[C[Cls[Kgcc -O -S sum_element.s\(1\).s [C[C[C[C[C[C[C[C[Cls[Kg++ [2Plsobjdump -d sum_element.s\(1\).s [C[C[C[C[C[C[C[C[Cls[Kgcc -O1 -c sum_element.s\(1\).s [C[C[C[C[C[C[C[C[Cls[Kobjdump -d sum_element.s\(1\).o asum[K[C[C[C[C[C[C[C[C[C[5Pgedit hshs[6Pexit[Kexitgedit hshsobjdump -d asum[C[C[C[C[C[C[C[C[C[5Pgedit hshs[6Pexit[Ke[Kd[Kgdb ./add 
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./add...done.
+(gdb) start
+Temporary breakpoint 1 at 0x400535: file main.c, line 8.
+Starting program: /local/files/aalot001/csc333/inClass/add 
+
+Temporary breakpoint 1, main () at main.c:8
+8	   int av[9]={1,2,3,4,5,6,7,8,9};
+(gdb) s
+9	   int al = 9;
+(gdb) s
+12	   res = rsum( &av, al);
+(gdb) c
+Continuing.
+ sum = 45
+[Inferior 1 (process 22013) exited with code 012]
+(gdb) b 2
+Breakpoint 2 at 0x400535: file main.c, line 2.
+(gdb) b
+Breakpoint 3 at 0x40057b: file main.c, line 12.
+(gdb) b 4
+Note: breakpoint 2 also set at pc 0x400535.
+Breakpoint 4 at 0x400535: file main.c, line 4.
+(gdb) r
+Starting program: /local/files/aalot001/csc333/inClass/add 
+
+Breakpoint 2, main () at main.c:8
+8	   int av[9]={1,2,3,4,5,6,7,8,9};
+(gdb) s
+9	   int al = 9;
+(gdb) s
+
+Breakpoint 3, main () at main.c:12
+12	   res = rsum( &av, al);
+(gdb) s
+rsum (Start=0x7fffffffd9f0, Count=9) at add.c:3
+3		if(Count <= 0)
+(gdb) s
+5		return *Start + rsum(Start+1, Count -1);
+(gdb) s
+rsum (Start=0x7fffffffd9f4, Count=8) at add.c:3
+3		if(Count <= 0)
+(gdb) c
+Continuing.
+ sum = 45
+[Inferior 1 (process 22017) exited with code 012]
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) q
+];aalot001@cslab-107.cs.plattsburgh.eduinClass$ exit
+exit
+
+Script done on Tue 18 Apr 2017 11:52:31 AM EDT

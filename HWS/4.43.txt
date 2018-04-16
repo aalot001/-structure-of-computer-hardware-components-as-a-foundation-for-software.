@@ -1,0 +1,15 @@
+Ahmed Alotaibi:
+
+Homework 4.43:
+
+If we substitute %esp for REG in the code sequence we get:
+
+	subl $4,%esp     Decrement stack pointer 
+	movl %esp, (%esp) Store
+
+	
+	# which would imply that the decremented version of the stack pointer would be stored on the stack, which we know is not the case:
+
+	
+	# and will return zero as movl%esp,(%esp) instruction will store the same value stored on the top of the stack.
+

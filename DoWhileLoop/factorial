@@ -1,0 +1,64 @@
+Script started on Thu 30 Mar 2017 12:01:25 PM EDT
+];aalot001@cslab-107.cs.plattsburgh.eduDoWhileLoop$ ls
+[0m[01;32masum[0m*   factorial  forLoop.s  fuctor.s  mainLoop.c
+[01;32masum1[0m*  forLoop.c  fuctor.c   main.c
+];aalot001@cslab-107.cs.plattsburgh.eduDoWhileLoop$ cat forLoop.s 
+	.file	"forLoop.c"
+	.section	.rodata
+.LC0:
+	.string	"factorial using for loop"
+	.text
+	.globl	fc
+	.type	fc, @function
+fc:
+.LFB0:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movl	%edi, -20(%rbp)
+	movl	$1, -4(%rbp)
+	movl	$.LC0, %edi
+	call	puts
+	movl	$2, -4(%rbp)
+	jmp	.L2
+.L3:
+	movl	-4(%rbp), %eax
+	imull	-20(%rbp), %eax
+	movl	%eax, -4(%rbp)
+	addl	$1, -4(%rbp)
+.L2:
+	movl	-4(%rbp), %eax
+	cmpl	-20(%rbp), %eax
+	jle	.L3
+	movl	-4(%rbp), %eax
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	fc, .-fc
+	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"
+	.section	.note.GNU-stack,"",@progbits
+];aalot001@cslab-107.cs.plattsburgh.eduDoWhileLoop$ cat forLoop.c 
+#include <stdio.h>
+#include <stdlib.h>
+
+/* p3.20 calculate factorial use for loop  */
+int fcf(int n) {
+   int i;
+   int x = 1;
+   printf("factorial using for loop\n");
+   for (i=2; i <= n; i++)
+       x *= i;
+   return x;
+}
+
+
+];aalot001@cslab-107.cs.plattsburgh.eduDoWhileLoop$ exit
+exit
+
+Script done on Thu 30 Mar 2017 12:01:57 PM EDT

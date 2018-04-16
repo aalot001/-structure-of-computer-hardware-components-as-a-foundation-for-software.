@@ -1,0 +1,81 @@
+Script started on Tue 28 Mar 2017 11:58:16 AM EDT
+];aalot001@cslab-107.cs.plattsburgh.eduHWS_2-56$ cat Loop.c 
+#include <stdio.h>
+#include <stdlib.h>
+
+/* assembly in C */
+/* loop changes every nth bit from 1 to 0 and every 0 to 1 ?  */
+int loop(int x, int n)
+{
+   int res, msk;
+   res = -1;
+   for (msk = 1; msk != 0; msk = (unsigned) msk >> (n&0xFF))
+      res ^= (x & msk);
+   
+   return res;
+
+}
+
+];aalot001@cslab-107.cs.plattsburgh.eduHWS_2-56$ cat main.c 
+int main(){
+
+	int x;
+	int n;
+	printf("\nX and N are values to examine assembly code\n"
+   	"\nEnter X value: 0X");
+  	scanf("%X", &x);
+   	printf("\n\tyou have entered %X for x", x);
+   	printf("\n"
+   	"\nEnter N value: 0X");
+	scanf("%X", &n);
+   	printf("\n\tyou have entered %X for n", n);
+   	printf("\n");
+   	printf("\n\tAfter looping with given values gives: 0X%X\n\n", loop(x, n));
+   	printf("\n");
+	return 0;
+   
+}
+
+/*
+To answer the quetion:
+A. esi: x
+   ebx: n
+   edi: result
+   edx: mask
+
+B. result: 0x55555555
+   mask:   0x80000000
+
+C. mask != 0
+
+D. mask = (unsigned)mask >> (n&0xFF)
+
+E. result ^= x & mask */
+];aalot001@cslab-107.cs.plattsburgh.eduHWS_2-56$ cat l[KLoop.s 
+	.file	"Loop.c"
+	.text
+	.globl	loop
+	.type	loop, @function
+loop:
+.LFB39:
+	.cfi_startproc
+	movl	$8, %edx
+	movl	$5, %eax
+	movzbl	%sil, %ecx
+.L3:
+	movl	%edx, %r8d
+	andl	%edi, %r8d
+	xorl	%r8d, %eax
+	shrl	%cl, %edx
+	testl	%edx, %edx
+	jne	.L3
+	rep ret
+	.cfi_endproc
+.LFE39:
+	.size	loop, .-loop
+	.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"
+	.section	.note.GNU-stack,"",@progbits
+];aalot001@cslab-107.cs.plattsburgh.eduHWS_2-56$ exit
+exit
+
+Script done on Tue 28 Mar 2017 11:58:48 AM EDT

@@ -1,0 +1,28 @@
+Script started on Thu 04 May 2017 11:12:11 AM EDT
+];aalot001@cslab-107.cs.plattsburgh.edulast$ cat main.c 
+#include  <stdio.h>
+#include  <string.h>
+#include  <sys/types.h>
+/* Ahmed Alotaibi: 
+   Homework 8.11 */
+
+int main(){
+
+	int i;
+	for (i = 0; i < 2; i++)
+		fork();
+	printf("hello\n");
+	wait(1, NULL, 0);
+
+}
+
+
+];aalot001@cslab-107.cs.plattsburgh.edulast$ ./main 
+hello
+hello
+hello
+hello
+];aalot001@cslab-107.cs.plattsburgh.edulast$ exit
+exit
+
+Script done on Thu 04 May 2017 11:12:49 AM EDT

@@ -1,0 +1,68 @@
+Script started on Tue 11 Apr 2017 10:55:10 AM EDT
+];aalot001@cslab-107.cs.plattsburgh.eduswh$ ls
+[0m[01;32masum[0m*     main-3-59.c  swit.c        switch-pro.s
+homework  main.c       switch-pro.c  swit.s
+];aalot001@cslab-107.cs.plattsburgh.eduswh$ cat swit.c 
+#include <stdio.h>
+#include <stdlib.h>
+/* Chap 3,  do while call switch-st	*/ 
+
+int switchSt(int x, int n){
+	int y;
+	do{
+	n -=100;
+	}while(n > 6);
+	switch(n){
+		case 0:
+			y = n;
+			y = x * 3;
+			y = (x * 3) * 4 + x;
+			break;
+		case 2:
+			y = x + 10;
+			break;
+		case 3:
+			y = x + 11;
+			
+		case 4:
+			y = x;
+
+		case 6:
+			y = y * y;
+			break;
+		default:
+			y = 0;
+	}
+	return y;
+}
+];aalot001@cslab-107.cs.plattsburgh.eduswh$ cat switch-pro.c 
+#include <stdio.h>
+#include <stdlib.h>
+/* Chap 3,  switch statement	*/ 
+
+int switch_prob(int x, int n)
+{
+	int result = x;
+	switch(n)
+	{
+	case 50:
+	case 52:
+		result *= 3;
+	case 53:
+		result *= result;
+	case 54:
+		result=(result + 10);
+		return result;
+	case 55:
+		result = result >> 2;
+		break;
+	default:
+		result= result + (x + x);
+		return result;
+	}
+	return result;
+}
+];aalot001@cslab-107.cs.plattsburgh.eduswh$ exit
+exit
+
+Script done on Tue 11 Apr 2017 10:55:49 AM EDT
